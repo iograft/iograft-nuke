@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+BASEDIR=$(dirname "$0")
+
+# Pull the Nuke command from an environment variable. This command should
+# be set as an environment variable in the environment settings to
+# allow for easily changing the Nuke version.
+"$IOG_NUKE_COMMAND" -t "$BASEDIR/iognukepy_subcore.py" "$@"
