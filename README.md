@@ -2,6 +2,8 @@
 
 This repository contains scripts and nodes for running iograft within Nuke. It includes two subcore commands (Python interpreter mode (`Nuke13.2 -t`) and using Nuke's python.exe suitable for use with `nuke_r`). It also includes an iograft plugin for Nuke and a few example iograft Nuke nodes.
 
+Special thanks to Jonas Lindfors for helping get the Nuke integration launched!
+
 ## Getting started with a Nuke environment
 
 Below are the steps required to setup a new environment in iograft for executing nodes in Nuke.
