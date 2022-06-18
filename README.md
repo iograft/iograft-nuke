@@ -18,7 +18,7 @@ Below are the steps required to setup a new environment in iograft for executing
 
 <details><summary>Example Nuke environment JSON</summary>
 <p>
-    
+
 ```json
 {
     "plugin_path": [
@@ -48,7 +48,7 @@ Below are the steps required to setup a new environment in iograft for executing
     "name": "nuke"
 }
 ```
-    
+
 </p>
 </details>
 
@@ -56,32 +56,8 @@ Below are the steps required to setup a new environment in iograft for executing
 
 There are two available subcore commands for running Nuke headless-ly from iograft. The first (`iognuke_subcore`) makes use of the `-t` parameter to the Nuke command to execute the subcore script. The second (`iognuker_subcore`) is suitable for usage with `nuke_r` and uses Nuke's included Python interpreter directly.
 
-## iograft Plugin for Nuke
 
-The iograft Plugin for Nuke allows iograft to be run from inside an interactive Nuke session. The plugin creates an iograft menu on the "Nodes" toolbar and registers 3 operations:
-
-1. **Start iograft** -
-Used to initialize a local iograft session within Nuke. Starts an iograft Core using the builtin Nuke Python interpreter. A UI session can be connected to this iograft Core for graph authoring and monitoring.
-
-2. **Stop iograft** -
-Used to shutdown the iograft session within Nuke.
-
-3. **Launch iograft UI** -
-Launch the iograft UI as a subprocess and connect to the iograft Core running inside of Nuke. Note: The UI runs in a completely separate process and not internally in Nuke. Only the iograft Core runs inside of Nuke.
-
-All other operations for interacting with the Core object should be completed using the iograft Python API.
-
-When the **Start iograft** operation is executed, it registers a Core named "nuke" that can be retrieved with the Python API as shown below:
-
-```python
-import iograft
-core = iograft.GetCore("nuke")
-```
-
-Using the Python API, we have access to useful functionality on the Core such as loading graphs, setting input values on a graph, and processing the graph.
-
-
-## iograft Plugin for Nuke
+## Using iograft within Nuke
 
 To use iograft within a Nuke interactive session, we need to ensure the iograft libraries are accessible to Nuke (via the Path/Python Path), and tell iograft what environment we are in. These steps can either be done with a custom Nuke startup script, or by launching Nuke using `iograft_env`.
 
@@ -129,6 +105,31 @@ iograft_env -e nuke -c Nuke13.2
 ```
 
 Note: Using this method alone, the iograft plugin will not be added to Nuke unless the plugin's path has been added to Nuke's NUKE_PATH or added in a startup script.
+
+
+## iograft Plugin for Nuke
+
+The iograft Plugin for Nuke allows iograft to be run from inside an interactive Nuke session. The plugin creates an iograft menu on the "Nodes" toolbar and registers 3 operations:
+
+1. **Start iograft** -
+Used to initialize a local iograft session within Nuke. Starts an iograft Core using the builtin Nuke Python interpreter. A UI session can be connected to this iograft Core for graph authoring and monitoring.
+
+2. **Stop iograft** -
+Used to shutdown the iograft session within Nuke.
+
+3. **Launch iograft UI** -
+Launch the iograft UI as a subprocess and connect to the iograft Core running inside of Nuke. Note: The UI runs in a completely separate process and not internally in Nuke. Only the iograft Core runs inside of Nuke.
+
+All other operations for interacting with the Core object should be completed using the iograft Python API.
+
+When the **Start iograft** operation is executed, it registers a Core named "nuke" that can be retrieved with the Python API as shown below:
+
+```python
+import iograft
+core = iograft.GetCore("nuke")
+```
+
+Using the Python API, we have access to useful functionality on the Core such as loading graphs, setting input values on a graph, and processing the graph.
 
 
 ## Threading in Nuke
