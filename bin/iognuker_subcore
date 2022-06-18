@@ -2,7 +2,7 @@
 
 BASEDIR=$(dirname "$0")
 
-# The Nuke executable directory contains a python executable compatible with
+# The Nuke executable directory contains a python executable compatible
 # with the Nuke libraries. As long as the Nuke executable directory is first
 # in the environment's PATH, this python executable will be found.
 python "$BASEDIR/iognukepy_subcore.py" "$@"
