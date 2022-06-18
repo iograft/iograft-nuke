@@ -18,6 +18,7 @@ Below are the steps required to setup a new environment in iograft for executing
 
 <details><summary>Example Nuke environment JSON</summary>
 <p>
+    
 ```json
 {
     "plugin_path": [
@@ -47,6 +48,7 @@ Below are the steps required to setup a new environment in iograft for executing
     "name": "nuke"
 }
 ```
+    
 </p>
 </details>
 
