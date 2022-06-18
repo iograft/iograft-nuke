@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import atexit
 import os
 
 import iograft
@@ -19,6 +20,14 @@ import nuke
 
 # The name of the Core object to be registered for the Nuke session.
 IOGRAFT_NUKE_CORE_NAME = "nuke"
+
+
+# Function to be used with atexit to ensure that iograft has been cleaned
+# up and doesn't prevent Nuke from exiting.
+@atexit.register
+def _ensureUninitialized():
+    if iograft.IsInitialized():
+        iograft.Uninitialize()
 
 
 def start_iograft():
