@@ -23,7 +23,7 @@ class SaveScriptNuke(iograft.Node):
 
     @classmethod
     def GetDefinition(cls):
-        node = iograft.NodeDefinition("save_script_nuke")
+        node = iograft.NodeDefinition("save_script")
         node.AddInput(cls.filename)
         node.AddInput(cls.overwrite)
         node.AddOutput(cls.out_filename)

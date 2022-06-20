@@ -16,7 +16,7 @@ class OpenScriptNuke(iograft.Node):
 
     @classmethod
     def GetDefinition(cls):
-        node = iograft.NodeDefinition("open_script_nuke")
+        node = iograft.NodeDefinition("open_script")
         node.AddInput(cls.filename)
         node.AddOutput(cls.out_filename)
         return node
