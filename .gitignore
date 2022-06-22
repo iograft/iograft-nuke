@@ -1,2 +1,3 @@
 *.pyc
 .reviewboardrc
+tab_stats.dat
