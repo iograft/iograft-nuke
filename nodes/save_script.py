@@ -19,7 +19,7 @@ class SaveScriptNuke(iograft.Node):
     overwrite = iograft.InputDefinition("overwrite", iobasictypes.Int(),
                                         default_value=-1)
 
-    out_filename = iograft.OutputDefinition("out_filename", iobasictypes.Path())
+    out_filename = iograft.OutputDefinition("filename", iobasictypes.Path())
 
     @classmethod
     def GetDefinition(cls):
