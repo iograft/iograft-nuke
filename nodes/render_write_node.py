@@ -43,7 +43,8 @@ class RenderWriteNode(iograft.Node):
         # Get the write node.
         node = nuke.toNode(write_node)
         if node is None:
-            raise KeyError("Node with name: {} does not exist.", write_node)
+            raise KeyError(
+                    "Node with name: '{}' does not exist.".format(write_node))
 
         # Execute the node.
         nuke.execute(write_node, start_frame, end_frame, increment)
