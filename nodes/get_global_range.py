@@ -17,6 +17,7 @@ class GetGlobalFrameRange(iograft.Node):
     @classmethod
     def GetDefinition(cls):
         node = iograft.NodeDefinition("get_global_range")
+        node.SetMenuPath("Nuke")
         node.AddOutput(cls.first_frame)
         node.AddOutput(cls.last_frame)
         return node

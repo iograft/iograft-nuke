@@ -22,6 +22,7 @@ class RenderWriteNode(iograft.Node):
     @classmethod
     def GetDefinition(cls):
         node = iograft.NodeDefinition("render_write_node")
+        node.SetMenuPath("Nuke")
         node.AddInput(cls.write_node)
         node.AddInput(cls.start_frame)
         node.AddInput(cls.end_frame)

@@ -16,6 +16,7 @@ class ClearScriptNuke(iograft.Node):
     @classmethod
     def GetDefinition(cls):
         node = iograft.NodeDefinition("clear_script")
+        node.SetMenuPath("Nuke")
         node.AddInput(cls.reset_to_defaults)
         return node
 
