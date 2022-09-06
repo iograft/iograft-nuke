@@ -53,6 +53,7 @@ class RenderWriteNode(iograft.Node):
         # Pull the "file" knob from the write node to pass on as output
         # from the node.
         output_file = node["file"].getValue()
+        output_file = output_file.replace("\\\\", "\\")
         iograft.SetOutput(self.output_file, data, output_file)
 
 
